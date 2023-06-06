@@ -3,8 +3,6 @@ import cv2
 import face_recognition
 import os
 
-app = Flask(__name__)
-
 # Load known faces from the folder
 known_faces = []
 known_names = []
@@ -55,35 +53,6 @@ def detect_faces():
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n\r\n')
     video_capture.release()
-
-@app.route("/")
-def home():
-    return render_template("home.html")
-    
-@app.route("/about")
-def about():
-    return render_template("about.html")
-    
-@app.route("/base")
-def base():
-    return render_template("base.html")
-
-@app.route("/kiosk-home")
-def kioskHome():
-    return render_template("kiosk-home.html")
-
-@app.route('/kiosk-login')
-def kiosk_login():
-    return render_template('kiosk-login.html')
-
-@app.route('/kiosk-logout')
-def kiosk_logout():
-    return render_template('kiosk-logout.html')
-
-@app.route('/video_feed')
-def video_feed():
+def videoFeed():
     return Response(detect_faces(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
-
-if __name__ == "__main__":
-    app.run(debug=True)

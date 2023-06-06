@@ -1,0 +1,136 @@
+body {
+    background-image: url('nallrc 1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: grey;
+    background-size: cover;
+}
+.container {
+    /* background-image: url('Lockscreen Wallpaper.jpg'); */
+    background-size: cover;
+    height: 100vh;
+    padding: 20px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.dashboard {
+    background-color: #840606;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 40vh;
+    height: 30vh;
+}
+
+.dashboardContainer {
+    /* float: left; */
+    /* background-color: #0e0941; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 180vh;
+    height: auto;
+    margin: auto;
+    
+}
+
+#dashboardColumn1 {
+    margin-left: 25px;
+    float: left;
+    /* background-color: #c76565; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 50vh;
+    height: auto;
+}
+
+#dashboardColumn2 {
+    float: left;
+    /* float: after; */
+    /* background-color: #c76565; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 50vh;
+    height: auto;
+}
+
+#dashboardColumn3 {
+    /* float: after; */
+    /* background-color: #c76565; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 50vh;
+    height: auto;
+}
+
+
+#dashboard1 {
+    /* Custom styles for dashboard 1 */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    height: 220px;
+}
+
+#dashboard2 {
+    /* Custom styles for dashboard 2 */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    height: 220px;
+}
+
+#dashboard3 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    height: 220px;
+}
+
+#dashboard4 {
+    /* Custom styles for dashboard 4 */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    height: 220px;
+}
+
+#dashboard5 {
+    /* Custom styles for dashboard 5 */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    height: 220px;
+}
+
+#dashboard6 {
+    /* Custom styles for dashboard 6 */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    height: 220px;
+}
+
+h4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40pt;
+    color: #ffffff;
+    text-align: center;
+}
+
+h5 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+}

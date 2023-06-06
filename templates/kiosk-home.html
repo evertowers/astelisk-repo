@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASTELISK</title>
+    <link rel="stylesheet" href="{{ url_for('static',     filename='css/home_style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <div class="dashboardContainer">
+            <div class="dashboardColumn" id="dashboardColumn1">
+                <a href="{{ url_for('kiosk_login') }}">
+                    <div class="dashboard" id="dashboard1">
+                        <!-- Content for dashboard 1 -->
+                        <h4>LOG IN</h4>
+                    </div>
+                </a>
+                <a href="KioskCheckout.html">
+                    <div class="dashboard" id="dashboard2">
+                        <!-- Content for dashboard 2 -->
+                        <h4>CHECK OUT</h4>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="dashboardColumn" id="dashboardColumn1">
+                <a href="{{ url_for('kiosk_logout') }}">
+                    <div class="dashboard" id="dashboard3">
+                        <!-- Content for dashboard 3 -->
+                        <h4>LOG OUT</h4>
+                    </div>
+                </a>
+
+                <a href="KioskCheckin.html">
+                    <div class="dashboard" id="dashboard4">
+                        <!-- Content for dashboard 4 -->
+                        <h4>CHECK IN</h4>
+                    </div> 
+                </a>
+            </div>
+
+            <div class="dashboardColumn" id="dashboardColumn1">
+                <a href="KioskLostBook.html">
+                    <div class="dashboard" id="dashboard5">
+                        <!-- Content for dashboard 5 -->
+                        <h5>REPORT LOST BOOK</h5>
+                    </div>
+                </a>
+                <a href="KioskContactAdmin.html">
+                    <div class="dashboard" id="dashboard6">
+                        <!-- Content for dashboard 6 -->
+                        <h4>CONTACT ADMIN</h4>
+                    </div>
+                </a>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+</html>
