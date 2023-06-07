@@ -1,5 +1,7 @@
-from flask import Flask, render_template, Response, redirect, url_for, flash, request
+from flask import Flask, render_template, Response, redirect, url_for, flash, request, jsonify
 import cv2
+from dotenv import load_dotenv
+import psycopg2
 import face_recognition
 import os
 from app import app
@@ -7,6 +9,11 @@ from urllib import request
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+connection = psycopg2.connect(url)
+#change mo yung path sa directory nung repo
+app.config["IMAGE_UPLOADS"] = "C:/Users/Christine/Documents/Astelisk-BackEnd"
+
+url = os.getenv("DATABASE_URL")
 
 # Load known faces from the folder
 known_faces = []
@@ -103,24 +110,35 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/patron-register', methods=['POST'])
+
+@app.route('/upload-image', methods=['GET', 'POST'])
 def upload_image():
-	if 'file' not in request.files:
-		flash('No file part')
-		return redirect(request.url)
-	file = request.files['file']
-	if file.filename == '':
-		flash('No image selected for uploading')
-		# return redirect(request.url)
-	# if file and allowed_file(file.filename):
-		filename = secure_filename(file.filename)
-		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		print('upload_image filename: ' + filename)
-		flash('Image successfully uploaded and displayed below')
-		return render_template('upload.html', filename=filename)
-	# else:
-	# 	flash('Allowed image types are -> png, jpg, jpeg, gif')
-	# 	return redirect(request.url)
+    if request.method == "POST":
+        if request.files:
+            image = request.files["image"]
+            print(image)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))  
+            return redirect(request.url)
+    return render_template("upload_image.html")
+
+# @app.route('/patron-register', methods=['POST'])
+# def upload_image():
+# 	if 'file' not in request.files:
+# 		flash('No file part')
+# 		return redirect(request.url)
+# 	file = request.files['file']
+# 	if file.filename == '':
+# 		flash('No image selected for uploading')
+# 		# return redirect(request.url)
+# 	# if file and allowed_file(file.filename):
+# 		filename = secure_filename(file.filename)
+# 		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+# 		print('upload_image filename: ' + filename)
+# 		flash('Image successfully uploaded and displayed below')
+# 		return render_template('upload.html', filename=filename)
+# 	# else:
+# 	# 	flash('Allowed image types are -> png, jpg, jpeg, gif')
+# 	# 	return redirect(request.url)
 
 if __name__ == "__main__":
     app.run(debug=True)
