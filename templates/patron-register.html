@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patron Registration</title>
+</head>
+<body>
+  <h1>PATRON REGISTRATION</h1>
+
+  <div class="register">
+    <form>
+        <label for="snumber">Student Number:</label><br>
+        <input type="text" id="snumber" name="snumber"><br>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="program">Program:</label><br>
+        <select name="program" id="program">
+          <option value="BSCE">Bachelor of Science in Civil Engineering (BSCE)</option>
+          <option value="BSCpE">Bachelor of Science in Computer Engineering (BSCpE)</option>
+          <option value="BSECE">Bachelor of Science in Electronics Engineering (BSECE)</option>
+          <option value="BSEE">Bachelor of Science in Electrical Engineering (BSEE)</option>
+          <option value="BSIE">Bachelor of Science in Industrial Engineering (BSIE)</option>
+          <option value="BSME">Bachelor of Science in Mechanical Engineering (BSME)</option>
+          <option value="BSRE">Bachelor of Science in Railway Engineering (BSRE)</option>
+          <option value="BSARCH">Bachelor of Science in Architecture (BSARCH)</option>
+          <option value="BSID">Bachelor of Science in Interior Design (BSID)</option>
+          <option value="BSEP">Bachelor of Science in Environmental Planning (BSEP)</option>
+        </select><br>
+        <label for="section">Section:</label><br>
+        <input type="text" id="section" name="section"><br>
+        <label for="picture">Take a picture</label><br>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <input type="file" name="file" autocomplete="off" required>
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+
+
+
+    </form>
+
+  </div>
+
+
+</body>
+</html>
