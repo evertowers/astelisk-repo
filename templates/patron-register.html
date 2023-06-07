@@ -7,7 +7,7 @@
   <h1>PATRON REGISTRATION</h1>
 
   <div class="register">
-    <form>
+
         <label for="snumber">Student Number:</label><br>
         <input type="text" id="snumber" name="snumber"><br>
         <label for="fname">First name:</label><br>
@@ -30,23 +30,17 @@
         <label for="section">Section:</label><br>
         <input type="text" id="section" name="section"><br>
         <label for="picture">Take a picture</label><br>
-        <form method="post" action="/" enctype="multipart/form-data">
+        <form method="POST" action="/upload-image" enctype="multipart/form-data">
             <dl>
                 <p>
-                    <input type="file" name="file" autocomplete="off" required>
+                    <input id="image" type="file" name="image" autocomplete="off" required>
                 </p>
             </dl>
             <p>
-                <input type="submit" value="Submit">
+                <button type="submit" value="Submit">upload</button>
             </p>
         </form>
 
-
-
-    </form>
-
   </div>
-
-
 </body>
 </html>

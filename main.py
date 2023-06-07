@@ -5,15 +5,17 @@ import psycopg2
 import face_recognition
 import os
 from app import app
-from urllib import request
 from werkzeug.utils import secure_filename
 
+load_dotenv()
+
 app = Flask(__name__)
+url = os.getenv("DATABASE_URL")
 connection = psycopg2.connect(url)
 #change mo yung path sa directory nung repo
-app.config["IMAGE_UPLOADS"] = "C:/Users/Christine/Documents/Astelisk-BackEnd"
+app.config["IMAGE_UPLOADS"] = "D:/astelisk-repo/astelisk-repo/static/uploads"
 
-url = os.getenv("DATABASE_URL")
+
 
 # Load known faces from the folder
 known_faces = []
@@ -119,7 +121,8 @@ def upload_image():
             print(image)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))  
             return redirect(request.url)
-    return render_template("upload_image.html")
+    return render_template("patron-register.html")
+
 
 # @app.route('/patron-register', methods=['POST'])
 # def upload_image():
